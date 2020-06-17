@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+    <h1>{{ post.title }}</h1>
+    <p>게시물 번호(id): {{ post.pk }}</p>
+    <p>글쓴이: {{ post.author }}</p>
+    <p>등록일: {{ post.date }}</p>
+    <p>{{ post.body }}</p>
+    <button type='button' onclick='location.href="{% url "delete" post.pk %}"'>삭제하기</button>
+    {% endblock content %}
